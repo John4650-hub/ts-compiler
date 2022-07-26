@@ -1,18 +1,17 @@
-name: Build
-on: 
-    push: 
-        branches:
-            - main
+on:
+  workflow_call:
+    secrets:
+      access-token:
+        description: 'A token passed from the caller workflow'
+        required: false
+
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps: 
-            - name: Checkout project
-              uses: actions/checkout@v2
-            - name: Setup Node.js
-              uses: actions/setup-node@v2.1.4
-              with:
-                node-version: 12
-            - run: npm install typescript
-            - 
-        
+  pass-secret-to-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pass the received secret to an 
+        uses: ./github/workflows/main.yml
+        with:
+          token: ${{ secrets.access-token }}
+      - run: echo "Test passed"
