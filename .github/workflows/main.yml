@@ -1,3 +1,4 @@
+name: token checl
 on:
   workflow_call:
     secrets:
