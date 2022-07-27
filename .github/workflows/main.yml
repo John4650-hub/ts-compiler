@@ -11,10 +11,9 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - run: pwd
-        #- run: mkdir -p path/to/artifact
-        
-        # - run: echo hello > /world.txt
-        #- uses: actions/upload-artifact@v3
-         # with:
-           # name: my-artifact
-            #path: path/to/artifact/world.txt
+        - run: mkdir -p artifacts/
+        - run: echo hello > /world.txt
+        - uses: actions/upload-artifact@v3
+          with:
+            name: my-artifact
+            path: artifact/world.txt
