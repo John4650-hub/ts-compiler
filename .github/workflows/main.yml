@@ -1,19 +1,16 @@
-name: Show all files in current directory
-
+name: Biuld acode
 on:
     push:
         branches:
-            - main
-
+        - main
+    
 jobs:
-    print-files:
+    install-required-dependecies:
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v2
-        - run: pwd
-        - run: mkdir -p artifact/
-        - run: cd artifact && echo hello > world.txt && cd ..
-        - uses: actions/upload-artifact@v3
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
           with:
-            name: my-artifact
-            path: artifact/world.txt
+            node-version: 16
+        - run: pwd
+        - run: npm ci
