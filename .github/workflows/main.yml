@@ -1,18 +1,13 @@
-name: token checl
+name: print all files in current folder
+
 on:
-  workflow_call:
-    secrets:
-      access-token:
-        description: 'A token passed from the caller workflow'
-        required: false
+    push:
+        branches:
+            - main
+
 
 jobs:
-  pass-secret-to-action:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Pass the received secret to an 
-        uses: ./github/workflows/main.yml
-        with:
-          token: ${{ secrets.access-token }}
-      - run: echo "Test passed"
+    print-files:
+        runs-on: ubuntu-latest
+          steps:
+            run: ls
