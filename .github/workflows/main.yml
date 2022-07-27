@@ -1,13 +1,12 @@
-name: print all files in current folder
+name: Show all files in current directory
 
 on:
     push:
         branches:
             - main
 
-
 jobs:
     print-files:
         runs-on: ubuntu-latest
-          steps:
-            run: ls
+        steps:
+        - run: ls -a
