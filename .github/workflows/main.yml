@@ -13,7 +13,8 @@ jobs:
           with:
             node-version: 16
         - run: ls
-        - run: node main.ts
+        - run: npm -g install typescript
+        - run: tsc main.js
         - uses: actions/upload-artifact@v3
           with:
             name: upload builds
