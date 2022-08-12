@@ -5,7 +5,7 @@ on:
         - main
     
 jobs:
-    install-required-dependecies:
+   Getting-started-with-github-actions:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v3
@@ -13,4 +13,9 @@ jobs:
           with:
             node-version: 16
         - run: pwd
+        - run: mkdir lib/
         - run: node main.ts
+        - uses: actions/upload-artifact@v3
+          with:
+            name: upload builds
+            path: ./lib/
