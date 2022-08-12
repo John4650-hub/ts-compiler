@@ -17,7 +17,7 @@ jobs:
         - run: tsc main.ts --outDir lib/
         - run: ls -a
         - run: cd lib && ls
-        - run: rm -r H 
+        - run: rm -rf H 
         - run: cd ..
         - uses: actions/upload-artifact@v3
           with:
