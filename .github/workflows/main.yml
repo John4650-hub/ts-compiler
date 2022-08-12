@@ -24,10 +24,9 @@ jobs:
             name: upload builds
             path: ./lib/*.js
             retention-days: 3
-        - uses: actions/checkout@v2
         - uses: actions/download-artifact@v3
           with:
-            name: Download artifacts
+            name: upload builds
             path: ./lib/
         - name: Display structure of downloaded files
           run: ls -R
