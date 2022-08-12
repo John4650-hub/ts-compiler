@@ -1,2 +1,4 @@
-let name = "honf";
-console.log(name);
+function log(message){
+console.log(message);
+}
+log("John delvins");
