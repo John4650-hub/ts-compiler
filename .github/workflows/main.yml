@@ -17,7 +17,7 @@ jobs:
         - run: tsc main.ts
         - run: ls -a
         - run: cd lib && ls
-        - run: cd -
+        - run: cd ..
         - uses: actions/upload-artifact@v3
           with:
             name: upload builds
