@@ -1,38 +1,35 @@
-
-name: Build Acode apk
-
+name: Biuld acode
 on:
-  push:
-    branches:
-    - main
-
-jobs:
+    push:
+        branches:
+        - main
     
-    Build-Acode-Apk:
-        runson: ubuntu-latest
+jobs:
+   Build-cordovaApp:
+        runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                node-version: 16
-            - run: npm install -g cordova
-            - run: mkdir MyProject
-            - run: cd MyProject
-            - run: cordova create hello com.example.hello HelloWorld
-            - run: cd hello
-            - run: cordova platform add browser
-            - run: cordova build browser
-            - run: cd .. && cd ..
-            - uses: actions/upload-artifact@v3
-              with:
-                name: upload builds
-                path: ./MyProject/
-                retention-days: 3
-            - uses: actions/download-artifact@v3
-              with:
-              name: upload builds
-              path: ./MyProject/
-        
-            - name: Display structure of downloaded files
-              run: ls -R
-              working-directory: ./MyProject/
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - run: npm install -g cordova
+        - run: mkdir MyProject
+        - run: cd MyProject
+        - run: cordova create hello com.example.hello HelloWorld
+        - run: cd hello
+        - run: cordova platform add browser
+        - run: cordova build browser
+        - run: cd .. && cd ..
+        - uses: actions/upload-artifact@v3
+          with:
+            name: upload builds
+            path: ./MyProject/
+            retention-days: 3
+        - uses: actions/download-artifact@v3
+          with:
+           name: upload builds
+           path: ./MyProject/
+
+        - name: Display structure of downloaded files
+          run: ls -R
+          working-directory: ./MyProject/
