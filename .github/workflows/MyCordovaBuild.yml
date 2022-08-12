@@ -17,7 +17,7 @@ jobs:
         - run: cd MyProject
         - run: cordova create hello com.example.hello HelloWorld
         - run: cd hello
-        - run: cordova platform add browser
+        - run: cordova platform add android
         - run: cordova build browser
         - run: cd .. && cd ..
         - uses: actions/upload-artifact@v3
