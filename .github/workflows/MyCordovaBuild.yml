@@ -16,6 +16,9 @@ jobs:
         - run: mkdir MyProject
         - run: cd MyProject
         - run: cordova create hello com.example.hello HelloWorld
+        - run: ls hello/
+        - run: ls HelloWorld/
+        - run: ls com.example.hello/
         - run: cd hello
         - run: cordova platform add android
         - run: cordova build browser
