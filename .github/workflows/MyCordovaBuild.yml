@@ -1,4 +1,4 @@
-name: Biuld acode
+name: Biuld cordova-app
 on:
     push:
         branches:
@@ -18,9 +18,9 @@ jobs:
         - run: cordova create hello com.example.hello HelloWorld
         - run: ls hello/
         - run: cd hello && cd www
-        - run: cordova platform add android
+        - run: cordova platform add browser
         - run: cordova build browser
-        - run: cd .. && cd ..
+        - run: cd ..
         - uses: actions/upload-artifact@v3
           with:
             name: upload builds
