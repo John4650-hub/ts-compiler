@@ -1,4 +1,4 @@
-name: Biuld cordova-app
+name: Biuld actions
 on:
     push:
         branches:
@@ -12,15 +12,7 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 16
-        - run: npm install -g cordova
-        - run: mkdir MyProject
-        - run: cd MyProject
-        - run: cordova create hello com.example.hello HelloWorld
-        - run: ls hello/
-        - run: cd hello && cd www
-        - run: cordova platform add browser
-        - run: cordova build browser
-        - run: cd ..
+        - run: npm init
         - uses: actions/upload-artifact@v3
           with:
             name: upload builds
