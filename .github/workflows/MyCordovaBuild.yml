@@ -12,7 +12,7 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 16
-        - run: npm init
+        - run: npm install live-server
         - uses: actions/upload-artifact@v3
           with:
             name: upload builds
