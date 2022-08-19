@@ -13,15 +13,17 @@ jobs:
           with:
             node-version: 16
         - run: npm install live-server
+        - run: pwd
+        - run: ls
         - uses: actions/upload-artifact@v3
           with:
             name: upload builds
-            path: ./MyProject/
+            path: ./
             retention-days: 3
         - uses: actions/download-artifact@v3
           with:
            name: upload builds
-           path: ./MyProject/
+           path: ./
 
         - name: Display structure of downloaded files
           run: ls -R
