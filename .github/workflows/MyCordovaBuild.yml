@@ -12,8 +12,7 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 16
-        - run: npm install live-server
-        - run: npm i express
+        - run: npm install --save-dev webpack
         - run: pwd
         - run: ls
         - uses: actions/upload-artifact@v3
