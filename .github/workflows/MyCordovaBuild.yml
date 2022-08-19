@@ -13,6 +13,7 @@ jobs:
           with:
             node-version: 16
         - run: npm install live-server
+        - run: npm i express
         - run: pwd
         - run: ls
         - uses: actions/upload-artifact@v3
@@ -27,4 +28,4 @@ jobs:
 
         - name: Display structure of downloaded files
           run: ls -R
-          working-directory: ./MyProject/
+          working-directory: ./
