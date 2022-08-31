@@ -2,18 +2,18 @@ name: Download Github Folder
 
 on:
   push:
-    braches: main
+    branches: main
 
 jobs:
-  github-folder-downloader:
-    runson: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: git clone https://github.com/nodejs/node.git
-    - run: git checkout v12.x
-    - run: cd node/doc/
-    - run: sudo mv api/ ~/
-    - uses: actions/upload-artifact@v3
-      with:
-        name: upload builds
-        path: ./api
+   github-folder-downloader:
+        runson: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+        - run: git clone https://github.com/nodejs/node.git
+        - run: git checkout v12.x
+        - run: cd node/doc/
+        - run: sudo mv api/ ~/
+        - uses: actions/upload-artifact@v3
+          with:
+            name: upload builds
+            path: ./api
