@@ -4,16 +4,16 @@ on:
   push:
     branches: main
 
+
 jobs:
   github-folder-downloader:
     runson: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: git clone https://github.com/nodejs/node.git
-      - run: git checkout v12.x
-      - run: cd node/doc/
-      - run: sudo mv api/ ~/
-      - uses: actions/upload-artifact@v3
-        with:
-          name: upload builds
-          path: ./api
+    - uses: actions/checkout@v3
+    - name: clone-git-repo
+      run: git clone https://github.com/nodejs/node.git
+    - run: sudo chmod +x gitfolder.sh && sh gitfolder.sh
+    - uses: actions/upload-artifact@v3
+      with:
+        name: upload builds
+        path: ./api
