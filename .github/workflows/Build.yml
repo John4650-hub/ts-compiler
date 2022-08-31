@@ -1,21 +1,20 @@
 name: Biuld actions
 on:
     push:
-        branches:
-        - main
+        branches: main
     
 jobs:
    Build-cordovaApp:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v3
-        - uses: actions/setup-node@v3
-          with:
-            node-version: 16
-        - run: npm install --save-dev webpack
-        - run: pwd
-        - run: ls
-        - uses: actions/upload-artifact@v3
-          with:
-            name: upload builds
-            path: ./node_modules
+        # - uses: actions/setup-node@v3
+        #   with:
+        #     node-version: 16
+        # - run: npm install --save-dev webpack
+        # - run: pwd
+        # - run: ls
+        # - uses: actions/upload-artifact@v3
+        #   with:
+        #     name: upload builds
+        #     path: ./node_modules
