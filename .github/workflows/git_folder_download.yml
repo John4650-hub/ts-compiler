@@ -12,7 +12,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: clone-git-repo
       run: git clone https://github.com/nodejs/node.git
-    - run: sudo chmod +x gitfolder.sh && sh gitfolder.sh
+    - name: change-branch-and-dir
+      run: git checkout v12.x && cd node/doc/
+    - name: move-api-to-home
+      run: sudo mv api/ ~/ && cd ~
     - uses: actions/upload-artifact@v3
       with:
         name: upload builds
