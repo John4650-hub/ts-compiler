@@ -10,10 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: clone-git-repo
-      run: git clone https://github.com/nodejs/node.git
-    - name: change-branch-and-dir
-      run: git branch -a
+      with:
+        repository: my-org/my-tools
+        path: my-tools
+    - run: ls
+    # - name: clone-git-repo
+    
+    #   run: git clone https://github.com/nodejs/node.git
+    # - name: change-branch-and-dir
+    #   run: git branch -a
     #   run: git checkout origin/v12.x && cd node/doc/
     # - name: move-api-to-home
     #   run: sudo mv api/ ~/ && cd ~
