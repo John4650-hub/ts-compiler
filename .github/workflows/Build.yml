@@ -1,6 +1,6 @@
 name: Biuld actions
 on:
-    pull-request:
+    pull:
         branches: main
     
 jobs:

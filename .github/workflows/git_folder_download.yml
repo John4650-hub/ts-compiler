@@ -13,10 +13,11 @@ jobs:
     - name: clone-git-repo
       run: git clone https://github.com/nodejs/node.git
     - name: change-branch-and-dir
-      run: git checkout origin/v12.x && cd node/doc/
-    - name: move-api-to-home
-      run: sudo mv api/ ~/ && cd ~
-    - uses: actions/upload-artifact@v3
-      with:
-        name: upload builds
-        path: ./api
+      run: git branch -a
+    #   run: git checkout origin/v12.x && cd node/doc/
+    # - name: move-api-to-home
+    #   run: sudo mv api/ ~/ && cd ~
+    # - uses: actions/upload-artifact@v3
+    #   with:
+    #     name: upload builds
+    #     path: ./api
