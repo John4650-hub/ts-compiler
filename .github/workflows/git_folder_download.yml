@@ -9,8 +9,11 @@ jobs:
     runson: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    # - run: git clone <url>
-    # - uses: actions/upload-artifact@v3
-    #   with:
-    #     name: upload builds
-    #     path: ./nameOfgitfolder e.g docs for npm packages 
+    - run: git clone https://github.com/nodejs/node.git
+    - run: git checkout v12.x
+    - run: cd node/doc/
+    - run: sudo mv api/ ~/
+    - uses: actions/upload-artifact@v3
+      with:
+        name: upload builds
+        path: ./api
