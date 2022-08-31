@@ -13,8 +13,8 @@ jobs:
       with:
         repository: nodejs/node
         ref: v12.x
-        path: node
-    - run: git branch
+        path: node/doc
+    - run: ls
     # - name: clone-git-repo
     
     #   run: git clone https://github.com/nodejs/node.git
