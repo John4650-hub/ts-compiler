@@ -11,8 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        repository: my-org/my-tools
-        path: my-tools
+        repository: nodejs/node
+        path: node
     - run: ls
     # - name: clone-git-repo
     
